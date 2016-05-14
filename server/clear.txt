@@ -1,0 +1,16 @@
+delete from accounting;
+delete from activity;
+delete from contact;
+delete from diary;
+delete from diary_job;
+delete from error;
+delete from note;
+delete from project;
+delete from question;
+delete from sap_object;
+delete from snippet;
+delete from sys_rel2obj_items;
+delete from task;
+delete from think;
+delete from timing;
+delete from url;

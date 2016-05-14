@@ -1,0 +1,47 @@
+.mb-15{margin-bottom:15px;}
+
+.mt-5{margin-top:5px;}
+
+.pb-5{}
+
+.row{margin-bottom:10px;}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.note-read{	
+	height: 350px;
+	overflow-y: scroll;
+}
+
+.display-none{
+	display:none;
+}
+
+.field-read{background-color: #FAFAFA;}
+
+.datatables-block th,td{font-size:11px;}
+.datatables-block label {font-size:11px;}
+.datatables-block a.paginate_button{font-size:11px; padding:4px 8px !important;}
+
+.cur_href{color:grey;font-size:10px;text-align:center;}
+
+.tab-pane > div.row{margin-top:5px;}
+
+.tab-content {margin-top:30px;}
+
+#card-read .title, #card-edit .title{color:#0000D6}
+#card-edit .title{padding-top:5px;}
+
+.rel-head{color:#0000D6;}
+.rel-title{background-color:#EDEDED; }
+.rel-title,.rel-col{border-right:solid #C4C4C4 1px;}
+
+#card-read .field-read table td{
+	border: 1px solid #ACACAC;
+	vertical-align: top;
+	padding:10px
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-------------->
+	<!--- COMMON --->
+	<!-------------->
+		
+		<meta charset="utf-8" />
+		
+	<!---------->
+	<!--- JS --->
+	<!---------->
+		<script src="components/jquery-2.2.0.min.js"></script>
+	
+		<!-- SYNTAXHIGHLIGHTER  -->
+		
+		<script type="text/javascript" src="components/syntaxhighlighter/scripts/shCore.js"></script>
+		<script type="text/javascript" src="components/syntaxhighlighter/scripts/shBrushAbap.js"></script>	
+		<script type="text/javascript" src="components/syntaxhighlighter/scripts/shBrushBash.js"></script>		
+		<script type="text/javascript" src="components/syntaxhighlighter/scripts/shBrushCss.js"></script>		
+		<script type="text/javascript" src="components/syntaxhighlighter/scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="components/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<script type="text/javascript" src="components/syntaxhighlighter/scripts/shBrushSql.js"></script>
+		<script type="text/javascript" src="components/syntaxhighlighter/scripts/shBrushVb.js"></script>
+		<script type="text/javascript" src="components/syntaxhighlighter/scripts/shBrushXml.js"></script>
+		
+		<!-- moment (bootstrap datapick) -->
+		<!--<script type="text/javascript" src="components/moment/min/moment.min.js"></script>-->
+	
+		<!-- bootstrap -->
+		<script type="text/javascript" src="components/bootstrap/js/transition.js"></script>
+		<script type="text/javascript" src="components/bootstrap/js/collapse.js"></script>
+		
+		<script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+			
+			<!-- bootstrap-datetimepicker -->
+			<!--<script src="components/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>-->
+		
+		<!-- mask input -->
+		<script src="components/jquery.maskedinput-master/dist/jquery.maskedinput.min.js"></script>
+		
+		<!-- tinymce -->
+		<script src="components/tinymce/tinymce.min.js"></script>
+	
+		<!-- datatables-->	
+		<script src="components/datatables/media/js/jquery.dataTables.min.js"></script>
+		
+		<!-- jstree -->
+		
+		
+		<!-- user -->
+		<script src="js/settings.js"></script>
+		<script src="js/myconsole.js"></script>
+		
+		<script src="js/object_state.js"></script>		
+		<script src="js/objects/all_relations.js"></script>
+		<script src="js/objects/object_sap_object.js"></script><!--УКАЗАТЬ ОБЪЕКТ-->  
+		<script src="js/object_function.js"></script>
+		
+		<script src="js/requester.js"></script>
+		<script src="js/datatype.js"></script>
+		
+		<script src="js/myajax.js"></script>
+		
+		<script src="js/mydatatables.js"></script>
+		<script src="js/mytinymce.js"></script>
+		<script src="js/rel.js"></script>
+		<script src="js/card.js"></script>
+		<script src="js/validator.js"></script>
+		<script src="js/main_view.js"></script>
+		
+		<script src="js/main.js"></script>
+	
+	<!--------->
+	<!-- CSS -->
+	<!--------->
+	
+		<!-- bootstrap -->		
+		<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap-theme.css">
+		
+		
+		<!-- datatables -->
+		<link rel="stylesheet" href="components/datatables/media/css/jquery.dataTables.min.css">
+		
+		<!-- jstree -->
+		<link rel="stylesheet" href="components/jstree/dist/themes/default/style.min.css">
+
+		<!-- Include *at least* the core style and default theme -->
+		<link href="components/syntaxhighlighter/styles/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="components/syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		
+		<!-- user -->
+		<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">ЛСУ ></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!--<li><a href="#" id="action_get_all">Получить все данные</a></li>-->
+		<li><a href="#" id="action_create">Создать</a></li>		
+		
+		<li><a href="#" id="action_show_table">Отобразить таблицу</a></li>
+		
+	  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	
+
+	<div class="container">
+		<!-- Сообщения -->
+		<div class="row">
+			<div id="message_info" class="text-center">
+			</div>
+		</div>
+		<!-- /Сообщения -->
+		<div class="row" id="block_edit">
+			<!-- Ссылка  на объект -->
+			<div class="cur_href small"></div>
+			<!-- /Ссылка  на объект -->
+			<div class="col-sm-1"></div>
+			<div class="col-sm-9">
+				<div id="card-edit" >
+					<div class="panel panel-primary">
+						 <!-- Меню и заголовок карточки -->
+						<div class="panel-heading">
+							<div class="btn-group pull-left">
+								<button type="button" class="btn btn-default btn-sm dropdown-toggle" style="margin-top:-5px;margin-right:15px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Меню <span class="caret"></span>
+								</button>
+								<ul class="card_menu dropdown-menu" field-mode="edit"></ul>
+							</div>
+							<span class="CARD_OBJECT_NAME"></span><span class="CARD_OBJECT_ID"></span><span class="CARD_OBJECT_INFO"></span>
+							<button id="action_update" class="btn btn-default btn-sm pull-right" style="margin-top:-5px;">Обновить</button>
+							<button id="action_save" class="btn btn-default btn-sm pull-right" style="margin-top:-5px;margin-left:15px">Сохранить</button>
+						</div>
+						<!-- /Меню и заголовок карточки -->
+						<div class="panel-body">
+							 <!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+							  <li class="active">
+									<a href="#base" role="tab" data-toggle="tab">Основные данные</a>
+							  </li>
+							   <li>
+									<a href="#edit-tab-rel-prev" role="tab" data-toggle="tab">Следующий(<span class="rel-cnt-prev">0</span>)</a>
+							  </li>
+							  
+							  <li>
+									<a href="#edit-tab-rel-next" role="tab" data-toggle="tab">Предыдущий(<span class="rel-cnt-next">0</span>)</a>
+							  </li>
+							</ul>
+							<!-- /Nav tabs -->
+							
+							<!-- Tab panes -->
+							<div class="tab-content" style="">
+								<input type="text" class="display-none form-control phone-mask input-sm field-edit" data-field-name="id" data-field-type="text" data-field-option="no-transmit">
+								<div class="tab-pane fade active in" id="base">
+									<div class="row ">
+										<div class="col-md-2 text-right small ">Категория:</div>
+										<div class="col-md-3">
+											<select type="text" class="form-control input-sm field-edit" data-field-name="sap_cat" data-field-type="list" data-scheme-status="sap-cat"></select>
+										</div>
+										<div class="col-md-2 text-right small ">Область:</div>
+										<div class="col-md-3">
+											<select type="text" class="form-control input-sm field-edit" data-field-name="sap_area" data-field-type="list" data-scheme-status="sap-area"></select>
+										</div>
+									</div>
+									
+									<div class="row ">
+										<div class="col-md-2 text-right small ">Название:</div>
+										<div class="col-md-10">
+											<input type="text" class="form-control input-sm field-edit" data-field-name="name" data-field-type="text"></input>
+										</div>
+									</div>
+									
+									<div class="row ">
+										<div class="col-md-2 text-right small ">Описание:</div>
+										<div class="col-md-10">
+											<input type="text" class="form-control input-sm field-edit" data-field-name="title" data-field-type="text"></input>
+										</div>
+									</div>
+									
+									<div class="row ">
+										<div class="col-md-2 text-right small ">Тэги:</div>
+										<div class="col-md-10">
+											<input type="text" class="form-control input-sm field-edit" data-field-name="tags" data-field-type="text"></input>
+										</div>
+									</div>
+									
+									<div class="row ">
+										<div class="col-md-2 text-right small ">Примечания:</div>
+										<div class="col-md-10">
+											<div id="text_editor" data-field-name="note"></div>
+										</div>																
+									</div>
+								</div>
+								<!-- Отношения с объектам -->
+								<div class="tab-pane fade in" id="edit-tab-rel-prev">
+									<div class="control-prev">
+										<div class="row">
+											<div class="col-md-3">
+												<select id="select-rel-list-from" type="text" class="form-control input-sm" ></select>
+											</div>
+											<div class="col-md-3">
+												<select id="select-object-list-from" type="text" class="form-control input-sm" ></select>
+											</div>
+											<div class="col-md-2">
+												<button id="button-create-rel-from" class="btn btn-default btn-sm ">Создать</button>
+											</div>
+										</div>
+									</div>
+									<div class="rel-prev"></div>
+								</div>
+
+								<div class="tab-pane fade in" id="edit-tab-rel-next">
+									<div class="control-next">
+										<div class="row">
+											<div class="col-md-3">
+												<select id="select-rel-list-to" type="text" class="form-control input-sm" ></select>
+											</div>
+											<div class="col-md-3">
+												<select id="select-object-list-to" type="text" class="form-control input-sm" ></select>
+											</div>
+											<div class="col-md-2">
+												<input id="input-object-id-to" type="text" class="form-control input-sm" ></select>
+											</div>
+											<div class="col-md-2">
+												<button id="button-create-rel-to" class="btn btn-default btn-sm ">Создать</button>
+											</div>
+										</div>
+									</div>
+									<div class="rel-next"></div>
+								</div>
+									
+								
+								<!-- /Отношения с объектами -->
+							</div>	
+						</div>
+					</div>
+				</div>			
+			</div>	
+		</div>
+		
+			<div class="row"  id="block_read">
+			<!-- Ссылка  на объект -->
+			<div class="cur_href small"></div>
+			<!-- /Ссылка  на объект -->
+			<div class="col-sm-1"></div>
+			<div class="col-sm-9">
+				<div id="card-read">
+					<div class="panel panel-primary">
+						<!-- Меню и заголовок карточки -->
+						<div class="panel-heading">
+							<div class="btn-group pull-left">
+								<button type="button" class="btn btn-default btn-sm dropdown-toggle" style="margin-top:-5px;margin-right:15px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Action <span class="caret"></span>
+								</button>
+								<ul  class="card_menu dropdown-menu" field-mode="read">
+								</ul>
+							</div>
+							<span class="CARD_OBJECT_NAME"></span><span class="CARD_OBJECT_ID"></span><span class="CARD_OBJECT_INFO"></span>
+							<button id="action_edit" class="btn btn-default btn-sm pull-right" style="margin-top:-5px;margin-left:15px">Редактировать</button>							 
+						</div>
+						<!-- /Меню и заголовок карточки -->
+						<div class="panel-body">
+							 <!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+							  <li class="active">
+									<a href="#tab-base-read" role="tab" data-toggle="tab">Личные данные</a>
+							  </li>
+							  <li>
+									<a href="#tab-rel-prev" role="tab" data-toggle="tab">Следующий (<span class="rel-cnt-prev">0</span>)</a>
+							  </li>
+							  
+							  <li>
+									<a href="#tab-rel-next" role="tab" data-toggle="tab">Предыдущий(<span class="rel-cnt-next">0</span>)</a>
+							  </li>
+							 
+							</ul>
+							
+							<!-- Tab panes -->
+							<div class="tab-content" style="">
+							  <div class="tab-pane fade active in" id="tab-base-read">
+									<div class="row ">
+										<div class="col-md-2 text-right small">Категория:</div>
+										<div class="col-md-3">
+											<div type="text" class="small field-read" data-field-name="sap_cat" data-field-type="list" data-scheme-status="sap-cat"></div>
+										</div>
+										<div class="col-md-2 text-right small ">Область:</div>
+										<div class="col-md-3">
+											<div type="text" class="small field-read" data-field-name="sap_area" data-field-type="list" data-scheme-status="sap-area"></div>
+										</div>
+									</div>
+									
+									<div class="row ">
+										<div class="col-md-2 text-right small ">Название:</div>
+										<div class="col-md-10">
+											<div type="text" class="small field-read" data-field-name="name" data-field-type="text"></div>
+										</div>
+									</div>
+									
+									<div class="row ">
+										<div class="col-md-2 text-right small">Описание:</div>
+										<div class="col-md-10">
+											<div type="text" class="small field-read" data-field-name="title" data-field-type="text"></div>
+										</div>
+									</div>
+									
+									<div class="row ">
+										<div class="col-md-2 text-right small">Тэги:</div>
+										<div class="col-md-10">
+											<div type="text" class="small field-read" data-field-name="tags" data-field-type="text"></div>
+										</div>
+									</div>
+									
+									<div class="row ">
+										<div class="col-md-2 text-right small">Примечания:</div>
+										<div class="col-md-10">
+											<div class="small field-read" data-field-name="note" data-field-type="text"></div>
+										</div>																
+									</div>
+								</div>
+								<!-- Отношения с объектами -->
+								<div class="tab-pane fade in" id="tab-rel-prev">
+									<div class="rel-prev"></div>
+								</div>
+
+								<div class="tab-pane fade in" id="tab-rel-next">
+									<div class="rel-next"></div>
+								</div>	
+								<!-- /Отношения с объектами -->
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row" id="block_table">
+			<div class="datatables-block">
+				<table id="table_id" class="display">
+				</table>
+			</div>
+		</div>
+		
+	</div>
+			
+					
+	
+</body>
+</html>

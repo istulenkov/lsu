@@ -1,0 +1,38 @@
+ Том в устройстве I имеет метку `
+ Серийный номер тома: 64DA-FF35
+
+ Содержимое папки i:\ROOT\BABYLON-4\projects\lsu\frontend\components\syntaxhighlighter\scripts
+
+07.03.2016  21:43    <DIR>          .
+07.03.2016  21:43    <DIR>          ..
+07.03.2016  21:43                 0 1.txt
+07.03.2016  13:37             1 451 shAutoloader.js
+07.03.2016  13:38             8 178 shBrushAppleScript.js
+07.03.2016  13:37             2 431 shBrushAS3.js
+07.03.2016  13:37             2 835 shBrushBash.js
+07.03.2016  13:38             8 296 shBrushColdFusion.js
+07.03.2016  13:38             5 284 shBrushCpp.js
+07.03.2016  13:37             2 528 shBrushCSharp.js
+07.03.2016  13:38             5 694 shBrushCss.js
+07.03.2016  13:37             2 382 shBrushDelphi.js
+07.03.2016  13:37             1 057 shBrushDiff.js
+07.03.2016  13:37             1 712 shBrushErlang.js
+07.03.2016  13:37             3 017 shBrushGroovy.js
+07.03.2016  13:37             2 101 shBrushJava.js
+07.03.2016  13:37             2 238 shBrushJavaFX.js
+07.03.2016  13:37             1 649 shBrushJScript.js
+07.03.2016  13:37             3 176 shBrushPerl.js
+07.03.2016  13:38             5 246 shBrushPhp.js
+07.03.2016  13:37               750 shBrushPlain.js
+07.03.2016  13:37             3 911 shBrushPowerShell.js
+07.03.2016  13:37             2 437 shBrushPython.js
+07.03.2016  13:37             2 188 shBrushRuby.js
+07.03.2016  13:38             5 982 shBrushSass.js
+07.03.2016  13:37             1 892 shBrushScala.js
+07.03.2016  13:37             3 054 shBrushSql.js
+07.03.2016  13:37             2 281 shBrushVb.js
+07.03.2016  13:37             1 998 shBrushXml.js
+07.03.2016  13:38            16 175 shCore.js
+07.03.2016  13:37             1 870 shLegacy.js
+              29 файлов        101 813 байт
+               2 папок  217 899 061 248 байт свободно
